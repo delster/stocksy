@@ -5,6 +5,7 @@ module.exports = {
     author: `David Elster, GitHub/LinkedIn: delster`,
   },
   plugins: [
+    // SEO
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -13,7 +14,11 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    // CMS
+    `gatsby-plugin-netlify-cms`,
+    // Styling
     `gatsby-plugin-styled-components`,
+    // Image Optimization
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -28,6 +33,7 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`,
       },
     },
+    // PWA & Offline Functionality
     `gatsby-plugin-offline`,
   ],
 }
