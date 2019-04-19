@@ -18,25 +18,25 @@ import { faFacebookSquare, faInstagram, faPinterestP, faTwitter } from '@fortawe
 import Header from './header'
 import Footer from './footer'
 
-const Theme = styled.div`
+const PageWrapper = styled.div`
   display: flex;
   flex-flow: column;
   color: #a6a6a6;
   background-color: black;
   min-height: 100vh;
 `
-const Body = styled.main`
+const Main = styled.main`
   flex: 1 1 100%;
 `
 
 library.add(fab, faFacebookSquare, faInstagram, faPinterestP, faTwitter)
 
 const Layout = ({ children }) => (
-  <Theme>
+  <PageWrapper>
     <Header />
-    <Body>{children}</Body>
+    <Main>{children}</Main>
     <Footer />
-  </Theme>
+  </PageWrapper>
 )
 
 Layout.propTypes = {
