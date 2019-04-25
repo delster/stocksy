@@ -10,7 +10,22 @@ import StocksySearch from '../components/stocksysearch'
 const SansFont = `"Open Sans", sans-serif`
 const SerifFont = `"Playfair Display", serif`
 
-const HeroSection = styled.section`margin-bottom: 240px;`
+const SectionLabel = styled.p`
+  position: absolute;
+  height: 1em;
+  color: white;
+  font-family: ${SansFont};
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  transform: rotate(270deg);
+`
+
+const HeroSection = styled.section`
+  margin-bottom: 240px;
+`
 const HeroHeading = styled.h2`
   color: white;
   font-family: ${SerifFont};
@@ -30,10 +45,17 @@ const HeroContent = styled.p`
 }
 `
 
-const DiscoverSection = styled.section`margin-bottom: 240px;`
+const DiscoverSection = styled.section`
+  margin-bottom: 180px;
+
+  & ${SectionLabel} {
+    top: 0;
+    left: -20%;
+  }
+`
 const DiscoverGrid = styled.div`
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 30px;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(2, 1fr);
 `
@@ -47,8 +69,8 @@ const DiscoverHeading = styled.h2`
   font-style: normal;
   font-weight: 700;
   line-height: 52px;
-  margin-bottom: .5em;
-  padding-left: 6rem;
+  margin-bottom: 0.5em;
+  padding-left: 5.5rem;
   max-width: 200px;
 `
 const DiscoverContent = styled.p`
@@ -58,23 +80,9 @@ const DiscoverContent = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: 29px;
-  padding-left: 6rem;
+  margin-bottom: 3em;
+  padding-left: 5.5rem;
   max-width: 360px;
-`
-
-const SectionLabel = styled.p`
-  position: absolute;
-  left: 0;
-  top: -50%;
-  height: 100%;
-  color: white;
-  font-family: ${SansFont};
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  transform: rotate(270deg);
 `
 
 const CaptionedImage = styled.div`
@@ -98,7 +106,29 @@ const Caption = styled.span`
   padding: 0.75em 0;
 `
 
-const BlogSection = styled.section``
+const BlogSection = styled.section`
+  margin-bottom: 180px;
+  & ${SectionLabel} {
+    top: -25%;
+    left: -42.5%;
+  }
+`
+const BlogFlex = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+`
+const BlogBox = styled.div`
+  flex: 1 1 100%;
+  height: 100%;
+  margin: 1rem;
+
+  &:first-of-type {
+    flex: 1 1 75%;
+    padding-bottom: 2rem;
+  }
+`
 const BlogHeading = styled.h2`
   color: white;
   font-family: ${SerifFont};
@@ -106,13 +136,27 @@ const BlogHeading = styled.h2`
   font-style: normal;
   font-weight: 700;
   line-height: 52px;
+  max-width: 140px;
+  margin: 0 auto;
+`
+const BlogPost = styled.div``
+const BlogImgWrap = styled.div`
+  background-color: #494949;
+  min-height: 220px;
+  width: 100%;
+  margin-bottom: 1rem;
+`
+const BlogLink = styled.a`
+  color: #ff3f58;
+  font-family: 'Open Sans';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
 `
 
-const BlogPost = styled.div``
-const BlogImage = styled.img``
-const BlogLink = styled.a``
-
-const SearchSection = styled.section``
+const SearchSection = styled.section`
+  margin-bottom: 180px;
+`
 const SearchHeading = styled.h2`
   color: white;
   font-family: ${SerifFont};
@@ -184,16 +228,28 @@ const IndexPage = () => (
     </DiscoverSection>
     <BlogSection>
       <Container>
-        <SectionLabel>More Great Stuff</SectionLabel>
-        <BlogHeading>On the blog</BlogHeading>
-        <BlogPost>
-          <BlogImage src="" alt="" />
-          <BlogLink href="#">Blog Title ></BlogLink>
-        </BlogPost>
-        <BlogPost>
-          <BlogImage src="" alt="" />
-          <BlogLink href="#">Blog Title ></BlogLink>
-        </BlogPost>
+        <BlogFlex>
+          <BlogBox>
+            <SectionLabel>More Great Stuff</SectionLabel>
+            <BlogHeading>On the blog</BlogHeading>
+          </BlogBox>
+          <BlogBox>
+            <BlogPost>
+              <BlogImgWrap>
+                <img src="" alt="" />
+              </BlogImgWrap>
+              <BlogLink href="#">Blog Title ></BlogLink>
+            </BlogPost>
+          </BlogBox>
+          <BlogBox>
+            <BlogPost>
+              <BlogImgWrap>
+                <img src="" alt="" />
+              </BlogImgWrap>
+              <BlogLink href="#">Blog Title ></BlogLink>
+            </BlogPost>
+          </BlogBox>
+        </BlogFlex>
       </Container>
     </BlogSection>
     <SearchSection>

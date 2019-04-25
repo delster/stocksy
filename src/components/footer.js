@@ -4,10 +4,43 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const StyledFooter = styled.footer`
   text-align: center;
+  margin-bottom: 54px;
 `
-const FooterSocials = styled.div``
-const FooterColophon = styled.div``
-const FooterLinks = styled.ul``
+const FooterSocials = styled.div`
+  color: white;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  max-width: 200px;
+  margin: 0 auto 24px;
+`
+const FooterColophon = styled.div`
+  color: #a6a6a6;
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  margin-bottom: 24px;
+`
+const FooterLinks = styled.ul`
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  max-width: 160px;
+  margin: 0 auto;
+  padding: 0;
+  & a {
+    color: #a6a6a6;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+  }
+`
 
 const Footer = () => (
   <StyledFooter>
@@ -17,7 +50,10 @@ const Footer = () => (
       <FontAwesomeIcon icon={['fab', 'pinterest-p']} />
       <FontAwesomeIcon icon={['fab', 'twitter']} />
     </FooterSocials>
-    <FooterColophon>The entire Stocksy United collection is 100% exclusive, hand selected for quality and curated daily.</FooterColophon>
+    <FooterColophon>
+      The entire Stocksy United collection is 100% exclusive, hand selected for
+      quality and curated daily.
+    </FooterColophon>
     <FooterLinks>
       <a href="/legal">Legal</a>
       <a href="/terms">Terms</a>
