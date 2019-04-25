@@ -10,7 +10,7 @@ import StocksySearch from '../components/stocksysearch'
 const SansFont = `"Open Sans", sans-serif`
 const SerifFont = `"Playfair Display", serif`
 
-const HeroSection = styled.section``
+const HeroSection = styled.section`margin-bottom: 240px;`
 const HeroHeading = styled.h2`
   color: white;
   font-family: ${SerifFont};
@@ -30,12 +30,12 @@ const HeroContent = styled.p`
 }
 `
 
-const DiscoverSection = styled.section``
+const DiscoverSection = styled.section`margin-bottom: 240px;`
 const DiscoverGrid = styled.div`
   display: grid;
+  grid-gap: 20px;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
 `
 const DiscoverGridItem = styled.div`
   ${props => props.tall && `grid-row-end: span 2;`}
@@ -47,7 +47,9 @@ const DiscoverHeading = styled.h2`
   font-style: normal;
   font-weight: 700;
   line-height: 52px;
+  margin-bottom: .5em;
   padding-left: 6rem;
+  max-width: 200px;
 `
 const DiscoverContent = styled.p`
   color: #a6a6a6;
@@ -55,21 +57,24 @@ const DiscoverContent = styled.p`
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
+  line-height: 29px;
   padding-left: 6rem;
+  max-width: 360px;
 `
 
 const SectionLabel = styled.p`
-  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: -50%;
   height: 100%;
   color: white;
   font-family: ${SansFont};
-  font-weight: 400;
-  font-style: normal;
   font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
   letter-spacing: 5px;
   text-transform: uppercase;
-  writing-mode: vertical-lr;
-  transform: rotate(180deg);
+  transform: rotate(270deg);
 `
 
 const CaptionedImage = styled.div`
@@ -78,18 +83,18 @@ const CaptionedImage = styled.div`
   background-color: #494949;
 `
 const Caption = styled.span`
+  color: white;
+  background-color: #292929;
   position: absolute;
   bottom: 0;
   width: 100%;
-  text-align: center;
-  background-color: #292929;
   font-weight: 600;
   font-family: 'Open Sans';
   font-size: 16px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: rgb(255, 255, 255);
   font-style: normal;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
   padding: 0.75em 0;
 `
 
@@ -122,7 +127,7 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`stocksy`, `gatsby`, `microsite`]} />
     <HeroSection>
-      <Container z={10}>
+      <Container z="10">
         <HeroHeading>50,000+ Business Stock Photos, Curated Daily</HeroHeading>
       </Container>
       <Container wide>

@@ -27,33 +27,28 @@ const GridItem = styled.div`
   `}
 `
 const Box = styled.div`
-  ${props => props.a && `flex: 1 1 50%; margin-bottom: ${gridGap};`}
-  ${props => props.b && `flex: 1 1 40%;`}
-  ${props => props.c && `grid-area: c;`}
-  ${props => props.d && `grid-area: d;`}
-  ${props => props.e && `grid-area: e;`}
-  ${props => props.f && `grid-area: f;`}
-  ${props => props.g && `grid-area: g;`}
-  ${props => props.h && `flex: 1 1 55%; margin-bottom: ${gridGap};`}
-  ${props => props.i && `flex: 1 1 35%;`}
+  background: #444;
+  ${props => props.area && `grid-area: ${props.area};`}
+  ${props => props.flexBasis && `flex: 1 1 ${props.flexBasis};`}
+  ${props => props.gapBottom && `margin-bottom: ${gridGap};`}
 `
 
 const HeroGrid = props => (
   <Grid outer>
     <GridItem flex>
-      <Box a />
-      <Box b />
+      <Box area="a" flexBasis="50%" gapBottom />
+      <Box area="b" flexBasis="40%" />
     </GridItem>
     <Grid inner>
-      <Box c />
-      <Box d />
-      <Box e />
-      <Box f />
-      <Box g />
+      <Box area="c" />
+      <Box area="d" />
+      <Box area="e" />
+      <Box area="f" />
+      <Box area="g" />
     </Grid>
     <GridItem flex>
-      <Box h />
-      <Box i />
+      <Box area="h" flexBasis="55%" gapBottom />
+      <Box area="i" flexBasis="35%" />
     </GridItem>
   </Grid>
 )
