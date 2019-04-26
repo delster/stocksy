@@ -14,8 +14,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    // CMS
-    `gatsby-plugin-netlify-cms`,
     // Styling
     `gatsby-plugin-styled-components`,
     // Image Optimization

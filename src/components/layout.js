@@ -23,9 +23,19 @@ import {
 import Header from './header'
 import Footer from './footer'
 
+// Styling Variables
+const SansFont = `"Open Sans", sans-serif`
+const SerifFont = `"Playfair Display", serif`
+
 // Global Styling
 const GlobalStyle = createGlobalStyle`
-  * { position: relative }
+  * {
+    position: relative;
+    font-family: ${SansFont};
+  }
+  h1,h2,h3,h4,h5,h6 {
+    font-family: ${SerifFont};
+  }
 `
 // Truly "Page Layout" Styling
 const PageWrapper = styled.div`
