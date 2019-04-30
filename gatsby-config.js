@@ -7,6 +7,11 @@ module.exports = {
   plugins: [
     // SEO
     `gatsby-plugin-react-helmet`,
+    // Styling
+    `gatsby-plugin-styled-components`,
+    // CMS
+    `gatsby-plugin-netlify-cms`,
+    // Source Images from Filesystem
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -14,19 +19,28 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    // Styling
-    `gatsby-plugin-styled-components`,
     // Image Optimization
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    // Source Landing Page Data from Markdown Files
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `landingpages`,
+        path: `${__dirname}/src/landingpages`,
+      },
+    },
+    // Markdown Parser
+    `gatsby-transformer-remark`,
+    // PWA Manifest
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `stocksy-microsite`,
         short_name: `stocksy`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#000000`,
+        theme_color: `#FF3F58`, // Websafe Version would be #FF3366
         display: `minimal-ui`,
         icon: `src/images/logo.png`,
       },

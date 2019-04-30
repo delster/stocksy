@@ -1,0 +1,56 @@
+backend:
+  name: git-gateway
+  repo: delster/stocksy
+
+media_folder: static/assets
+public_folder: assets
+
+collections:
+  - name: lp
+    label: 'Landing Pages'
+    folder: 'landingpages'
+    create: true
+    fields:
+      - { label: 'Title', name: 'title' }
+      - { label: 'Slug', name: 'slug' }
+      - label: 'Hero Section'
+        name: 'hero'
+        widget: 'object'
+        fields:
+          - { label: 'Heading', name: 'heading' }
+          - { label: 'Copy', name: 'copy', widget: 'markdown' }
+          - label: 'Gallery (Provide 9)'
+            name: 'galleryImages'
+            widget: 'list'
+            field: { label: 'Image (Asset ID)', name: 'imageId' }
+      - label: 'Discover Section'
+        name: 'discover'
+        widget: 'object'
+        fields:
+          - { label: 'Heading', name: 'heading' }
+          - { label: 'Vertical Text', name: 'label' }
+          - { label: 'Copy', name: 'copy', widget: 'markdown' }
+          - label: 'Images (Provide 4)'
+            name: 'images'
+            widget: 'list'
+            fields:
+              - { label: 'Image (Asset ID)', name: 'imageId' }
+              - { label: 'Image Caption', name: 'caption' }
+      - label: 'Blog Section'
+        name: 'blog'
+        widget: 'object'
+        fields:
+          - { label: 'Heading', name: 'heading' }
+          - { label: 'Vertical Text', name: 'label' }
+          - label: 'Posts (Provide 2)'
+            name: 'posts'
+            widget: 'list'
+            fields:
+              - { label: 'Image (Asset ID)', name: 'imageId' }
+              - { label: 'Post Link (URL)', name: 'linkUrl' }
+              - { label: 'Post Link (Text)', name: 'linkText' }
+      - label: 'Search Section'
+        name: 'search'
+        widget: 'object'
+        fields:
+          - { label: 'Heading', name: 'heading' }
