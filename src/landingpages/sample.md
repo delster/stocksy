@@ -1,4 +1,4 @@
 ---
 title: "Sample Landing Page"
-slug: "sample-landing-page"
+slug: "/sample-landing-page"
 ---

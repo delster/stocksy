@@ -27,7 +27,6 @@ exports.createPages = ({ actions, graphql }) => {
       createPage({
         path: node.frontmatter.slug,
         component: landingPageTemplate,
-        context: {},
       })
     })
   })
