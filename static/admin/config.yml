@@ -20,37 +20,42 @@ collections:
         widget: 'object'
         fields:
           - { label: 'Heading', name: 'heading' }
-          - { label: 'Copy', name: 'copy', widget: 'markdown' }
-          - label: 'Gallery (Provide 9)'
-            name: 'galleryImages'
+          - label: 'Grid Images (Provide 9)'
+            name: 'gridImages'
             widget: 'list'
-            field: { label: 'Image (Asset ID)', name: 'imageId' }
+            field:
+              { label: 'Image (Asset ID)', name: 'imageId', widget: 'string' }
+          - { label: 'Copy', name: 'copy', widget: 'markdown' }
       - label: 'Discover Section'
         name: 'discover'
         widget: 'object'
         fields:
-          - { label: 'Heading', name: 'heading' }
           - { label: 'Vertical Text', name: 'label' }
+          - { label: 'Heading', name: 'heading' }
           - { label: 'Copy', name: 'copy', widget: 'markdown' }
           - label: 'Images (Provide 4)'
-            name: 'images'
+            name: 'discoverImages'
             widget: 'list'
             fields:
-              - { label: 'Image (Asset ID)', name: 'imageId' }
-              - { label: 'Image Caption', name: 'caption' }
+              - { label: 'Image (Asset ID)', name: 'imageId', widget: 'string' }
+              - { label: 'Image Caption', name: 'caption', widget: 'string' }
       - label: 'Blog Section'
         name: 'blog'
         widget: 'object'
         fields:
-          - { label: 'Heading', name: 'heading' }
           - { label: 'Vertical Text', name: 'label' }
+          - { label: 'Heading', name: 'heading' }
           - label: 'Posts (Provide 2)'
             name: 'posts'
             widget: 'list'
             fields:
-              - { label: 'Image (Asset ID)', name: 'imageId' }
-              - { label: 'Post Link (URL)', name: 'linkUrl' }
-              - { label: 'Post Link (Text)', name: 'linkText' }
+              - { label: 'Image (Asset ID)', name: 'imageId', widget: 'string' }
+              - {
+                  label: 'Post Link (Text)',
+                  name: 'linkText',
+                  widget: 'string',
+                }
+              - { label: 'Post Link (URL)', name: 'linkUrl', widget: 'string' }
       - label: 'Search Section'
         name: 'search'
         widget: 'object'
