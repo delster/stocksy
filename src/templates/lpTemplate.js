@@ -5,8 +5,15 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 
 import HeroSection from '../components/sections/hero'
-import DiscoverSection, { CaptionedImage, Caption } from '../components/sections/discover'
-import BlogSection, { BlogPost, BlogImgWrap, BlogLink } from '../components/sections/blog'
+import DiscoverSection, {
+  CaptionedImage,
+  Caption,
+} from '../components/sections/discover'
+import BlogSection, {
+  BlogPost,
+  BlogImgWrap,
+  BlogLink,
+} from '../components/sections/blog'
 import SearchSection from '../components/sections/search'
 
 const Template = ({ data }) => {
@@ -14,18 +21,18 @@ const Template = ({ data }) => {
   const { frontmatter } = markdownRemark
 
   return (
-    <div className="blog-post-container">
-      <div className="blog-post">
-        <h1>Slug: {frontmatter.slug}</h1>
-        <h2>Path: {frontmatter.path}</h2>
-      </div>
-    </div>
-
     <Layout>
       <SEO title="Home" keywords={[`stocksy`, `gatsby`, `microsite`]} />
+      <div className="blog-post-container">
+        <div className="blog-post">
+          <h1>Slug: {frontmatter.slug}</h1>
+          <h2>Path: {frontmatter.path}</h2>
+        </div>
+      </div>
       <HeroSection
         heading="50,000+ Business Stock Photos, Curated Daily"
-        content="Business stock photography that looks authentic. All photographs and footage are exclusive and available royalty-free. Use our modern business content on your digital projects like websites, blog posts, or social media ads. Our stock business images are also great for print and digital ad campaigns." />
+        content="Business stock photography that looks authentic. All photographs and footage are exclusive and available royalty-free. Use our modern business content on your digital projects like websites, blog posts, or social media ads. Our stock business images are also great for print and digital ad campaigns."
+      />
       <DiscoverSection
         label="Discover Stocksy"
         heading="Business Images"
@@ -47,15 +54,23 @@ const Template = ({ data }) => {
           <Caption>Gallery Title D</Caption>
         </CaptionedImage>
       </DiscoverSection>
-      <BlogSection
-        label="More Great Stuff"
-        heading="On the blog">
+      <BlogSection label="More Great Stuff" heading="On the blog">
         <BlogPost
-          image={<BlogImgWrap><img src="" alt="" /></BlogImgWrap>}
-          link={<BlogLink href="#">Blog Title ></BlogLink>} />
+          image={
+            <BlogImgWrap>
+              <img src="" alt="" />
+            </BlogImgWrap>
+          }
+          link={<BlogLink href="#">Blog Title ></BlogLink>}
+        />
         <BlogPost
-          image={<BlogImgWrap><img src="" alt="" /></BlogImgWrap>}
-          link={<BlogLink href="#">Blog Title ></BlogLink>} />
+          image={
+            <BlogImgWrap>
+              <img src="" alt="" />
+            </BlogImgWrap>
+          }
+          link={<BlogLink href="#">Blog Title ></BlogLink>}
+        />
       </BlogSection>
       <SearchSection heading="Explore Stocksy's Business" />
     </Layout>
