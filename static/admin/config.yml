@@ -2,16 +2,19 @@ backend:
   name: git-gateway
   repo: delster/stocksy
 
-media_folder: static/assets
-public_folder: assets
+media_folder: static/images
+public_folder: /images
 
 collections:
   - name: lp
     label: 'Landing Pages'
     folder: 'landingpages'
     create: true
+    editor:
+      preview: false
     fields:
       - { label: 'Title', name: 'title' }
+      - { label: 'Slug', name: 'slug' }
       - label: 'Hero Section'
         name: 'hero'
         widget: 'object'
