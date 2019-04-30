@@ -78,8 +78,8 @@ const Template = ({ data }) => {
 }
 
 export const pageQuery = graphql`
-  query($slug: String!) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+  query($path: String!) {
+    markdownRemark(frontmatter: { slug: { eq: $path } }) {
       frontmatter {
         slug
         title
