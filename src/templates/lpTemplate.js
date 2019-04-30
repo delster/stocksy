@@ -26,7 +26,7 @@ const Template = ({ data }) => {
       <div className="blog-post-container">
         <div className="blog-post">
           <h1>Title: {frontmatter.title}</h1>
-          <h2>path: {frontmatter.path}</h2>
+          <h2>slug: {frontmatter.slug}</h2>
         </div>
       </div>
       <HeroSection
@@ -78,10 +78,10 @@ const Template = ({ data }) => {
 }
 
 export const pageQuery = graphql`
-  query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query($slug: String!) {
+    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       frontmatter {
-        path
+        slug
         title
       }
     }
