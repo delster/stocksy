@@ -27,7 +27,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `landingpages`,
-        path: `${__dirname}/src/landingpages`,
+        path: `${__dirname}/landingpages`,
       },
     },
     // Markdown Parser
