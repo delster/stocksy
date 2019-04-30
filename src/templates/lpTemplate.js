@@ -25,8 +25,8 @@ const Template = ({ data }) => {
       <SEO title="Home" keywords={[`stocksy`, `gatsby`, `microsite`]} />
       <div className="blog-post-container">
         <div className="blog-post">
-          <h1>Slug: {frontmatter.slug}</h1>
-          <h2>slug: {frontmatter.slug}</h2>
+          <h1>Title: {frontmatter.title}</h1>
+          <h2>path: {frontmatter.path}</h2>
         </div>
       </div>
       <HeroSection
@@ -78,11 +78,11 @@ const Template = ({ data }) => {
 }
 
 export const pageQuery = graphql`
-  query($slug: String!) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+  query($path: String!) {
+    markdownRemark(frontmatter: { path: { eq: $path } }) {
       frontmatter {
+        path
         title
-        slug
       }
     }
   }

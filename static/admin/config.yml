@@ -12,7 +12,6 @@ collections:
     create: true
     fields:
       - { label: 'Title', name: 'title' }
-      - { label: 'Slug', name: 'slug' }
       - label: 'Hero Section'
         name: 'hero'
         widget: 'object'
