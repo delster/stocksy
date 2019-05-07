@@ -66,6 +66,6 @@ blog:
       linkText: Pet Photographer of the Year
       linkUrl: 'https://www.stocksy.com/blog/melanie-defazio-pet-photographer/'
 search:
-  heading: Explore Stocksy's Collection
+  heading: Explore Stocksy's Collection of Pupper Imagery (and more!)
 ---
 
