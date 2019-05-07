@@ -1,50 +1,52 @@
 ---
-title: Sample Landing Page
-slug: /sample-landing-page
+title: Dog Stock Photos | Stocksy United
+slug: /dog-stock-photos
 hero:
   copy: >-
-    Business stock photography that looks authentic. All photographs and footage
-    are exclusive and available royalty-free. Use our modern business content on
-    your digital projects like websites, blog posts, or social media ads. Our
-    stock business images are also great for print and digital ad campaigns.
+    Dog stock photography that looks authentic. All photographs and footage are
+    exclusive and available royalty-free. Use our modern puppy content on your
+    digital projects like websites, blog posts, or social media ads. Our stock
+    canine images are also great for print and digital ad campaigns.
   gridImages:
-    - '2499440'
-    - '2499929'
-    - '2499982'
-    - '547551'
-    - '2018970'
-    - '405062'
-    - '2496981'
-    - '1885784'
-    - '2257491'
-  heading: '50,000+ Business Stock Photos, Curated Daily'
+    - '2211898'
+    - '1979598'
+    - '2376794'
+    - '2231773'
+    - '2219794'
+    - '2117948'
+    - '2089985'
+    - '1921360'
+    - '2063998'
+  heading: '24,566+ Dog Stock Photos, Curated Daily'
 discover:
   copy: >-
-    Explore our curated galleries featuring the latest stock business
-    photography. From the boardroom to the coffee shop, we have business imagery
-    for any occasion.
+    Explore our curated galleries featuring the latest stock dog photography.
+    From the dog park to the back yard, we have business imagery for any
+    occasion.
   discoverImages:
-    - caption: Gallery Title A
-      imageId: '1510525'
-    - caption: Gallery Title B
-      imageId: '2113295'
-    - caption: Gallery Title C
-      imageId: '1510525'
-    - caption: Gallery Title D
-      imageId: '2113295'
-  heading: Business Images
+    - caption: Cats and Dogs
+      imageId: '433413'
+    - caption: Office Pets
+      imageId: '1333574'
+    - caption: Cozy Critters
+      imageId: '812400'
+    - caption: Funny Dogs
+      imageId: '1739700'
+  heading: Dog Images
   label: DISCOVER STOCKSY
 blog:
   heading: On the blog
   label: MORE GREAT STUFF
   posts:
-    - imageId: '2499440'
-      linkText: LinkedIn
-      linkUrl: 'https://www.linkedin.com/in/delster/'
-    - imageId: '2499929'
-      linkText: GitHub
-      linkUrl: 'https://github.com/delster/stocksy'
+    - imageId: '1739700'
+      linkText: Christmas Critters
+      linkUrl: >-
+        https://www.stocksy.com/stock-photos?s=animal%20christmas&sort=popular&t=christmas%20critters
+    - imageId: '1653689'
+      linkText: Cats + Dogs
+      linkUrl: >-
+        https://www.stocksy.com/stock-photos/?s=cat+or+dog+-wild&sort=popular&t=cats+and+dogs
 search:
-  heading: Explore Stocksy's Business
+  heading: Explore Stocksy's Collection
 ---
 
