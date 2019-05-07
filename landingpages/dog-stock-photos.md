@@ -61,12 +61,10 @@ blog:
   posts:
     - imageId: '1739700'
       linkText: Christmas Critters
-      linkUrl: >-
-        https://www.stocksy.com/stock-photos?s=animal%20christmas&sort=popular&t=christmas%20critters
+      linkUrl: 'https://www.stocksy.com/blog/holiday-pet-costumes/'
     - imageId: '1653689'
-      linkText: Cats + Dogs
-      linkUrl: >-
-        https://www.stocksy.com/stock-photos/?s=cat+or+dog+-wild&sort=popular&t=cats+and+dogs
+      linkText: Pet Photographer of the Year
+      linkUrl: 'https://www.stocksy.com/blog/melanie-defazio-pet-photographer/'
 search:
   heading: Explore Stocksy's Collection
 ---
