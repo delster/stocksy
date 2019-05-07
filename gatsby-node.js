@@ -11,20 +11,26 @@ exports.createPages = ({ actions, graphql }) => {
         edges {
           node {
             frontmatter {
-              title
               slug
+              title
+              description
               hero {
                 heading
                 copy
-                gridImages
+                gridImages {
+                  imageId
+                  altText
+                }
               }
               discover {
                 label
                 heading
                 copy
                 discoverImages {
-                  caption
                   imageId
+                  altText
+                  captionLinkText
+                  captionLinkUrl
                 }
               }
               blog {

@@ -19,8 +19,14 @@ const DiscoverGrid = styled.div`
   grid-template-columns: repeat(2, 1fr);
 `
 const DiscoverGridItem = styled.div`
+  & ${CaptionedImage} img {
+    max-height: 400px;
+  }
   &:nth-of-type(4) {
     grid-row-end: span 2;
+    & ${CaptionedImage} img {
+      max-height: 800px;
+    }
   }
 `
 const DiscoverHeading = styled.h2`
@@ -44,7 +50,7 @@ const DiscoverContent = styled.p`
   max-width: 360px;
 `
 
-export const CaptionedImage = styled.div`
+const CaptionedImage = styled.div`
   &,
   & img {
     height: 100%;
@@ -53,12 +59,13 @@ export const CaptionedImage = styled.div`
     background-color: #494949;
   }
 `
-export const Caption = styled.span`
+const Caption = styled.span`
   color: white;
   background-color: #292929;
   position: absolute;
   left: 0;
   bottom: 0;
+  min-height: 1em;
   width: 100%;
   font-weight: 600;
   font-family: 'Open Sans';
@@ -79,12 +86,14 @@ const DiscoverSection = props => (
           <DiscoverContent>{props.content}</DiscoverContent>
         </DiscoverGridItem>
         {props.discoverImages &&
-          props.discoverImages.map( (e,i) => (
+          props.discoverImages.map((e, i) => (
             <DiscoverGridItem key={i}>
-              <CaptionedImage>
-                <CDNImage assetId={e.imageId} />
-                <Caption>{e.caption}</Caption>
-              </CaptionedImage>
+              <a href={e.captionLinkUrl}>
+                <CaptionedImage>
+                  <CDNImage assetId={e.imageId} alt={e.altText} />
+                  <Caption>{e.captionLinkText}</Caption>
+                </CaptionedImage>
+              </a>
             </DiscoverGridItem>
           ))}
       </DiscoverGrid>

@@ -49,44 +49,53 @@ const HeroGrid = props => (
   <Grid outer>
     <GridItem flex>
       <Box area="a" flexBasis="50%" gapBottom>
-        { props.gridImages &&
-          <CDNImage assetId={props.gridImages[0]} alt='' />}
+        <CDNImage
+          assetId={props.gridImages[0].imageId}
+          alt={props.gridImages[0].altText} />
       </Box>
       <Box area="b" flexBasis="40%">
-        { props.gridImages &&
-          <CDNImage assetId={props.gridImages[1]} alt='' />}
+        <CDNImage
+          assetId={props.gridImages[1].imageId}
+          alt={props.gridImages[1].altText} />
       </Box>
     </GridItem>
     <Grid inner>
       <Box area="c">
-        { props.gridImages &&
-          <CDNImage assetId={props.gridImages[2]} alt='' />}
+        <CDNImage
+          assetId={props.gridImages[2].imageId}
+          alt={props.gridImages[2].altText} />
       </Box>
       <Box area="d">
-        { props.gridImages &&
-          <CDNImage assetId={props.gridImages[3]} alt='' />}
+        <CDNImage
+          assetId={props.gridImages[3].imageId}
+          alt={props.gridImages[3].altText} />
       </Box>
       <Box area="e">
-        { props.gridImages &&
-          <CDNImage assetId={props.gridImages[4]} alt='' />}
+        <CDNImage
+          assetId={props.gridImages[4].imageId}
+          alt={props.gridImages[4].altText} />
       </Box>
       <Box area="f">
-        { props.gridImages &&
-          <CDNImage assetId={props.gridImages[5]} alt='' />}
+        <CDNImage
+          assetId={props.gridImages[5].imageId}
+          alt={props.gridImages[5].altText} />
       </Box>
       <Box area="g">
-        { props.gridImages &&
-          <CDNImage assetId={props.gridImages[6]} alt='' />}
+        <CDNImage
+          assetId={props.gridImages[6].imageId}
+          alt={props.gridImages[6].altText} />
       </Box>
     </Grid>
     <GridItem flex>
       <Box area="h" flexBasis="55%" gapBottom>
-        { props.gridImages &&
-          <CDNImage assetId={props.gridImages[7]} alt='' />}
+        <CDNImage
+          assetId={props.gridImages[7].imageId}
+          alt={props.gridImages[7].altText} />
       </Box>
       <Box area="i" flexBasis="35%">
-        { props.gridImages &&
-          <CDNImage assetId={props.gridImages[8]} alt='' />}
+        <CDNImage
+          assetId={props.gridImages[8].imageId}
+          alt={props.gridImages[8].altText} />
       </Box>
     </GridItem>
   </Grid>

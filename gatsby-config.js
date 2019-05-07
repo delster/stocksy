@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Stocksy`,
-    description: `Meta description for this microsite will be provided by the client here.`,
-    author: `David Elster, GitHub/LinkedIn: delster`,
+    description: `Stocksy United leads the way with a highly curated collection of stock photography. Browse our galleries and find the latest stock images and video clips.`,
+    author: `@delster2`,
   },
   plugins: [
     // SEO

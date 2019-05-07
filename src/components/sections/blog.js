@@ -14,7 +14,7 @@ const StyledBlogSection = styled.section`
 const BlogFlex = styled.div`
   display: flex;
   flex-flow: row nowrap;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
 `
 const BlogBox = styled.div`
@@ -24,6 +24,7 @@ const BlogBox = styled.div`
 
   &:first-of-type {
     flex: 1 1 75%;
+    align-self: center;
     padding-bottom: 2rem;
   }
 `
@@ -43,6 +44,7 @@ const BlogImgWrap = styled.div`
   margin-bottom: 1rem;
   &,
   & img {
+    max-height: 360px;
     height: 100%;
     width: 100%;
     object-fit: cover;

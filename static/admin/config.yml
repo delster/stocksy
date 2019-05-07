@@ -7,6 +7,7 @@ public_folder: /images
 
 collections:
   - name: lp
+    identifier_field: slug
     label: 'Landing Pages'
     folder: 'landingpages'
     create: true
@@ -15,6 +16,7 @@ collections:
     fields:
       - { label: 'Title', name: 'title' }
       - { label: 'Slug', name: 'slug' }
+      - { label: 'Description', name: 'description' }
       - label: 'Hero Section'
         name: 'hero'
         widget: 'object'
@@ -23,8 +25,9 @@ collections:
           - label: 'Grid Images (Provide 9)'
             name: 'gridImages'
             widget: 'list'
-            field:
-              { label: 'Image (Asset ID)', name: 'imageId', widget: 'string' }
+            fields:
+              - { label: 'Image (Asset ID)', name: 'imageId', widget: 'string' }
+              - { label: 'Image Alt Text', name: 'altText', widget: 'string' }
           - { label: 'Copy', name: 'copy', widget: 'markdown' }
       - label: 'Discover Section'
         name: 'discover'
@@ -38,7 +41,9 @@ collections:
             widget: 'list'
             fields:
               - { label: 'Image (Asset ID)', name: 'imageId', widget: 'string' }
-              - { label: 'Image Caption', name: 'caption', widget: 'string' }
+              - { label: 'Image Alt Text', name: 'altText', widget: 'string' }
+              - { label: 'Caption Link (Text)', name: 'captionLinkText', widget: 'string' }
+              - { label: 'Caption Link (URL)', name: 'captionLinkUrl', widget: 'string' }
       - label: 'Blog Section'
         name: 'blog'
         widget: 'object'
@@ -50,11 +55,7 @@ collections:
             widget: 'list'
             fields:
               - { label: 'Image (Asset ID)', name: 'imageId', widget: 'string' }
-              - {
-                  label: 'Post Link (Text)',
-                  name: 'linkText',
-                  widget: 'string',
-                }
+              - { label: 'Post Link (Text)', name: 'linkText', widget: 'string' }
               - { label: 'Post Link (URL)', name: 'linkUrl', widget: 'string' }
       - label: 'Search Section'
         name: 'search'

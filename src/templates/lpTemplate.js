@@ -12,6 +12,7 @@ import SearchSection from '../components/sections/search'
 const Template = ({ data }) => {
   const {
     title,
+    description,
     hero,
     discover,
     blog,
@@ -20,20 +21,27 @@ const Template = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title={title} keywords={[`stocksy`, `gatsby`, `microsite`]} />
+      <SEO
+        title={title}
+        description={description}
+        keywords={[`stocksy`, `gatsby`, `microsite`]}
+      />
       <HeroSection
         heading={hero.heading}
         content={hero.copy}
-        gridImages={hero.gridImages} />
+        gridImages={hero.gridImages}
+      />
       <DiscoverSection
         label={discover.label}
         heading={discover.heading}
         content={discover.copy}
-        discoverImages={discover.discoverImages} />
+        discoverImages={discover.discoverImages}
+      />
       <BlogSection
         label={blog.label}
         heading={blog.heading}
-        posts={blog.posts} />
+        posts={blog.posts}
+      />
       <SearchSection heading={search.heading} />
     </Layout>
   )
@@ -44,18 +52,24 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { slug: { eq: $path } }) {
       frontmatter {
         title
+        description
         hero {
           heading
           copy
-          gridImages
+          gridImages {
+            imageId
+            altText
+          }
         }
         discover {
           label
           heading
           copy
           discoverImages {
-            caption
             imageId
+            altText
+            captionLinkText
+            captionLinkUrl
           }
         }
         blog {
