@@ -8,7 +8,6 @@ hero:
     digital projects like websites, blog posts, or social media ads. Our stock
     canine images are also great for print and digital ad campaigns.
   gridImages:
-    - '2063998'
     - '2211898'
     - '1979598'
     - '2376794'
@@ -17,12 +16,12 @@ hero:
     - '2117948'
     - '2089985'
     - '1921360'
+    - '2063998'
   heading: '24,566+ Dog Stock Photos, Curated Daily'
 discover:
   copy: >-
     Explore our curated galleries featuring the latest stock dog photography.
-    From the dog park to the back yard, we have business imagery for any
-    occasion.
+    From the dog park to the back yard, we have doge imagery for any occasion.
   discoverImages:
     - caption: Cats and Dogs
       imageId: '433413'
@@ -47,6 +46,6 @@ blog:
       linkUrl: >-
         https://www.stocksy.com/stock-photos/?s=cat+or+dog+-wild&sort=popular&t=cats+and+dogs
 search:
-  heading: Explore Stocksy's Collection of Puppers (and More!)
+  heading: Explore Stocksy's Collection
 ---
 
