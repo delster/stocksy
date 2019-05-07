@@ -47,6 +47,6 @@ blog:
       linkUrl: >-
         https://www.stocksy.com/stock-photos/?s=cat+or+dog+-wild&sort=popular&t=cats+and+dogs
 search:
-  heading: Explore Stocksy's Collection
+  heading: Explore Stocksy's Collection of Puppers (and More!)
 ---
 
