@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+
 import Container from '../layout/container'
-import { SectionLabel } from '../layout/shared'
+import { SectionLabel } from '../partials/sectionlabel'
+import CDNImage from '../utils/cdnimage'
 
 const StyledDiscoverSection = styled.section`
   margin-bottom: 180px;
@@ -43,14 +45,19 @@ const DiscoverContent = styled.p`
 `
 
 export const CaptionedImage = styled.div`
-  position: relative;
-  height: 100%;
-  background-color: #494949;
+  &,
+  & img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    background-color: #494949;
+  }
 `
 export const Caption = styled.span`
   color: white;
   background-color: #292929;
   position: absolute;
+  left: 0;
   bottom: 0;
   width: 100%;
   font-weight: 600;
@@ -71,7 +78,15 @@ const DiscoverSection = props => (
           <DiscoverHeading>{props.heading}</DiscoverHeading>
           <DiscoverContent>{props.content}</DiscoverContent>
         </DiscoverGridItem>
-        {props.children.map(item=><DiscoverGridItem>{item}</DiscoverGridItem>)}
+        {props.discoverImages &&
+          props.discoverImages.map( (e,i) => (
+            <DiscoverGridItem key={i}>
+              <CaptionedImage>
+                <CDNImage assetId={e.imageId} />
+                <Caption>{e.caption}</Caption>
+              </CaptionedImage>
+            </DiscoverGridItem>
+          ))}
       </DiscoverGrid>
     </Container>
   </StyledDiscoverSection>

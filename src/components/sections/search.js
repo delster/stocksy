@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Container from '../layout/container'
-import StocksySearch from '../stocksysearch'
+import StocksySearch from '../partials/stocksysearch'
 
 const StyledSearchSection = styled.section`
   margin-bottom: 180px;

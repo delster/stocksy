@@ -20,8 +20,8 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 
 // Layout Components
-import Header from './header'
-import Footer from './footer'
+import Header from './partials/header'
+import Footer from './partials/footer'
 
 // Styling Variables
 const SansFont = `"Open Sans", sans-serif`

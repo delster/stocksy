@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import Container from '../layout/container'
-import { SectionLabel } from '../layout/shared'
+import { SectionLabel } from '../partials/sectionlabel'
+import CDNImage from '../utils/cdnimage'
 
 const StyledBlogSection = styled.section`
   margin-bottom: 180px;
@@ -35,22 +36,25 @@ const BlogHeading = styled.h2`
   max-width: 140px;
   margin: 0 auto;
 `
-const StyledBlogPost = styled.div``
-export const BlogImgWrap = styled.div`
-  background-color: #494949;
+const BlogPost = styled.div``
+const BlogImgWrap = styled.div`
   min-height: 220px;
   width: 100%;
   margin-bottom: 1rem;
+  &,
+  & img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
 `
-export const BlogLink = styled.a`
+const BlogLink = styled.a`
   color: #ff3f58;
   font-family: 'Open Sans';
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
 `
-export const BlogPost = props => <StyledBlogPost>{props.image}{props.link}</StyledBlogPost>
-
 const BlogSection = props => (
   <StyledBlogSection>
     <Container>
@@ -59,7 +63,17 @@ const BlogSection = props => (
           <SectionLabel>{props.label}</SectionLabel>
           <BlogHeading>{props.heading}</BlogHeading>
         </BlogBox>
-        {props.children.map(post=><BlogBox>{post}</BlogBox>)}
+        {props.posts &&
+          props.posts.map(post => (
+          <BlogBox key={post.imageId}>
+            <BlogPost>
+              <BlogImgWrap>
+                <CDNImage assetId={post.imageId} />
+              </BlogImgWrap>
+              <BlogLink href={post.linkUrl}>{post.linkText} ></BlogLink>
+            </BlogPost>
+          </BlogBox>
+        ))}
       </BlogFlex>
     </Container>
   </StyledBlogSection>

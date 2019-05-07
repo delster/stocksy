@@ -1,51 +1,47 @@
 import React from 'react'
+import { Link, graphql } from 'gatsby'
 import SEO from '../components/utils/seo'
 import Layout from '../components/layout'
+import Container from '../components/layout/container'
 
-import HeroSection from '../components/sections/hero'
-import DiscoverSection, { CaptionedImage, Caption } from '../components/sections/discover'
-import BlogSection, { BlogPost, BlogImgWrap, BlogLink } from '../components/sections/blog'
-import SearchSection from '../components/sections/search'
-
-const IndexPage = () => (
+const IndexPage = ({
+  data: {
+    allMarkdownRemark: { edges },
+  },
+}) => (
   <Layout>
     <SEO title="Home" keywords={[`stocksy`, `gatsby`, `microsite`]} />
-    <HeroSection
-      heading="50,000+ Business Stock Photos, Curated Daily"
-      content="Business stock photography that looks authentic. All photographs and footage are exclusive and available royalty-free. Use our modern business content on your digital projects like websites, blog posts, or social media ads. Our stock business images are also great for print and digital ad campaigns." />
-    <DiscoverSection
-      label="Discover Stocksy"
-      heading="Business Images"
-      content="Explore our curated galleries featuring the latest stock business photography. From the boardroom to the coffee shop, we have business imagery for any occasion.">
-      <CaptionedImage>
-        <img src="" alt="" />
-        <Caption>Gallery Title A</Caption>
-      </CaptionedImage>
-      <CaptionedImage>
-        <img src="" alt="" />
-        <Caption>Gallery Title B</Caption>
-      </CaptionedImage>
-      <CaptionedImage>
-        <img src="" alt="" />
-        <Caption>Gallery Title C</Caption>
-      </CaptionedImage>
-      <CaptionedImage tall>
-        <img src="" alt="" />
-        <Caption>Gallery Title D</Caption>
-      </CaptionedImage>
-    </DiscoverSection>
-    <BlogSection
-      label="More Great Stuff"
-      heading="On the blog">
-      <BlogPost
-        image={<BlogImgWrap><img src="" alt="" /></BlogImgWrap>}
-        link={<BlogLink href="#">Blog Title ></BlogLink>} />
-      <BlogPost
-        image={<BlogImgWrap><img src="" alt="" /></BlogImgWrap>}
-        link={<BlogLink href="#">Blog Title ></BlogLink>} />
-    </BlogSection>
-    <SearchSection heading="Explore Stocksy's Business" />
+    <Container>
+      <h1>
+        Welcome to the Landing Page Generator! Use the CMS to create subpages.
+      </h1>
+      <p>Current Subpages:</p>
+      <ul>
+        {edges.map(e => (
+          <li key={e.node.frontmatter.slug}>
+            <Link to={e.node.frontmatter.slug}>
+              {e.node.frontmatter.title}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </Container>
   </Layout>
 )
+
+export const pageQuery = graphql`
+  query {
+    allMarkdownRemark(sort: { order: ASC, fields: [frontmatter___title] }) {
+      edges {
+        node {
+          frontmatter {
+            title
+            slug
+          }
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage

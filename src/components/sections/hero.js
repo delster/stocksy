@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Container from '../layout/container'
-import HeroGrid from '../herogrid'
+import HeroGrid from '../partials/herogrid'
 
 const StyledHeroSection = styled.section`
   margin-bottom: 240px;
@@ -28,7 +28,7 @@ const HeroSection = props => (
       <HeroHeading>{props.heading}</HeroHeading>
     </Container>
     <Container wide>
-      <HeroGrid />
+      <HeroGrid gridImages={props.gridImages} />
     </Container>
     <Container narrow>
       <HeroContent>{props.content}</HeroContent>

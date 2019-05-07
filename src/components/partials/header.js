@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import Container from './layout/container'
-import LogoImg from '../images/logo.png'
+import Container from '../layout/container'
+import LogoImg from '../../images/logo.png'
 
 const StyledHeader = styled.header`
   margin-top: 3rem;

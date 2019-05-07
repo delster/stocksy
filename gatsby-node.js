@@ -13,6 +13,32 @@ exports.createPages = ({ actions, graphql }) => {
             frontmatter {
               title
               slug
+              hero {
+                heading
+                copy
+                gridImages
+              }
+              discover {
+                label
+                heading
+                copy
+                discoverImages {
+                  caption
+                  imageId
+                }
+              }
+              blog {
+                label
+                heading
+                posts {
+                  imageId
+                  linkText
+                  linkUrl
+                }
+              }
+              search {
+                heading
+              }
             }
           }
         }
