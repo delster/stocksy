@@ -8,6 +8,7 @@ hero:
     digital projects like websites, blog posts, or social media ads. Our stock
     canine images are also great for print and digital ad campaigns.
   gridImages:
+    - '2063998'
     - '2211898'
     - '1979598'
     - '2376794'
@@ -16,7 +17,6 @@ hero:
     - '2117948'
     - '2089985'
     - '1921360'
-    - '2063998'
   heading: '24,566+ Dog Stock Photos, Curated Daily'
 discover:
   copy: >-
