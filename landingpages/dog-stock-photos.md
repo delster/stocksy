@@ -12,6 +12,8 @@ hero:
     canine images are also great for print and digital ad campaigns.
   gridImages:
     - altText: Alt Text Here
+      imageId: '2063998'
+    - altText: Alt Text Here
       imageId: '2211898'
     - altText: Alt Text Here
       imageId: '1979598'
@@ -27,8 +29,6 @@ hero:
       imageId: '2089985'
     - altText: Alt Text Here
       imageId: '1921360'
-    - altText: Alt Text Here
-      imageId: '2063998'
   heading: '24,566+ Dog Stock Photos, Curated Daily'
 discover:
   copy: >-
