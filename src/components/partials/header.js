@@ -36,7 +36,7 @@ const Header = () => (
         <img src={LogoImg} alt="Stocksy Logo" />
       </HeaderLeft>
       <HeaderRight>
-        Shop <a href="https://stocksy.com">Stocksy.com</a>
+        Shop <a href="https://www.stocksy.com">Stocksy.com</a>
       </HeaderRight>
     </HeaderWrapper>
   </StyledHeader>
