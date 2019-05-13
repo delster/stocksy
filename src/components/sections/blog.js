@@ -4,11 +4,18 @@ import Container from '../layout/container'
 import { SectionLabel } from '../partials/sectionlabel'
 import CDNImage from '../utils/cdnimage'
 
+const responsiveBreakpoint = `980px`
+
 const StyledBlogSection = styled.section`
   margin-bottom: 180px;
+
   & ${SectionLabel} {
     top: -25%;
     left: -42.5%;
+  }
+
+  @media (max-width: ${responsiveBreakpoint}) {
+    margin-bottom: 4rem;
   }
 `
 const BlogFlex = styled.div`
@@ -16,6 +23,11 @@ const BlogFlex = styled.div`
   flex-flow: row nowrap;
   align-items: flex-end;
   justify-content: space-between;
+
+  @media (max-width: ${responsiveBreakpoint}) {
+    flex-flow: column;
+    align-items: stretch;
+  }
 `
 const BlogBox = styled.div`
   flex: 1 1 100%;
@@ -26,6 +38,25 @@ const BlogBox = styled.div`
     flex: 1 1 75%;
     align-self: center;
     padding-bottom: 2rem;
+
+    @media (max-width: ${responsiveBreakpoint}) {
+      margin: 0;
+
+      & * {
+        display: inline-block;
+        text-align: left;
+        padding-left: 5.5rem;
+        max-width: 100%;
+        width: 100%;
+      }
+
+      & ${SectionLabel} {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+      }
+    }
   }
 `
 const BlogHeading = styled.h2`
@@ -39,7 +70,6 @@ const BlogHeading = styled.h2`
 `
 const BlogPost = styled.div``
 const BlogImgWrap = styled.div`
-  min-height: 220px;
   width: 100%;
   margin-bottom: 1rem;
   &,
@@ -51,11 +81,13 @@ const BlogImgWrap = styled.div`
   }
 `
 const BlogLink = styled.a`
+  display: inline-block;
   color: #ff3f58;
   font-family: 'Open Sans';
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
+  min-height: 2em;
 `
 const BlogSection = props => (
   <StyledBlogSection>
@@ -67,15 +99,15 @@ const BlogSection = props => (
         </BlogBox>
         {props.posts &&
           props.posts.map(post => (
-          <BlogBox key={post.imageId}>
-            <BlogPost>
-              <BlogImgWrap>
-                <CDNImage assetId={post.imageId} />
-              </BlogImgWrap>
-              <BlogLink href={post.linkUrl}>{post.linkText} ></BlogLink>
-            </BlogPost>
-          </BlogBox>
-        ))}
+            <BlogBox key={post.imageId}>
+              <BlogPost>
+                <BlogImgWrap>
+                  <CDNImage assetId={post.imageId} />
+                </BlogImgWrap>
+                <BlogLink href={post.linkUrl}>{post.linkText} ></BlogLink>
+              </BlogPost>
+            </BlogBox>
+          ))}
       </BlogFlex>
     </Container>
   </StyledBlogSection>

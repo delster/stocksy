@@ -3,8 +3,14 @@ import styled from 'styled-components'
 import Container from '../layout/container'
 import HeroGrid from '../partials/herogrid'
 
+const responsiveBreakpoint = `720px`
+
 const StyledHeroSection = styled.section`
   margin-bottom: 240px;
+
+  @media (max-width: ${responsiveBreakpoint}) {
+    margin-bottom: 6rem;
+  }
 `
 const HeroHeading = styled.h2`
   color: white;
@@ -13,6 +19,10 @@ const HeroHeading = styled.h2`
   line-height: 88px;
   max-width: 800px;
   margin-bottom: -0.5em;
+
+  @media (max-width: ${responsiveBreakpoint}) {
+    margin-bottom: 0.5em;
+  }
 `
 const HeroContent = styled.p`
   color: #a6a6a6;

@@ -5,11 +5,24 @@ import Container from '../layout/container'
 import { SectionLabel } from '../partials/sectionlabel'
 import CDNImage from '../utils/cdnimage'
 
+const responsiveBreakpoint = `720px`
+
 const StyledDiscoverSection = styled.section`
   margin-bottom: 180px;
-  & ${SectionLabel} {
-    top: 0;
-    left: -20%;
+
+  @media (max-width: ${responsiveBreakpoint}) {
+    margin-bottom: 6rem;
+  }
+`
+const DiscoverSectionLabel = styled(SectionLabel)`
+  top: 0;
+  left: -20%;
+
+  @media (max-width: ${responsiveBreakpoint}) {
+    position: relative;
+    left: inherit;
+    padding-left: 5.5rem;
+    transform: none;
   }
 `
 const DiscoverGrid = styled.div`
@@ -17,6 +30,10 @@ const DiscoverGrid = styled.div`
   grid-gap: 30px;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(2, 1fr);
+
+  @media (max-width: ${responsiveBreakpoint}) {
+    grid-template-columns: none;
+  }
 `
 const DiscoverGridItem = styled.div`
   & ${CaptionedImage} img {
@@ -81,7 +98,7 @@ const DiscoverSection = props => (
     <Container>
       <DiscoverGrid>
         <DiscoverGridItem>
-          <SectionLabel>{props.label}</SectionLabel>
+          <DiscoverSectionLabel>{props.label}</DiscoverSectionLabel>
           <DiscoverHeading>{props.heading}</DiscoverHeading>
           <DiscoverContent>{props.content}</DiscoverContent>
         </DiscoverGridItem>

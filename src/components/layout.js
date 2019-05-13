@@ -30,6 +30,7 @@ const SerifFont = `"Playfair Display", serif`
 // Global Styling
 const GlobalStyle = createGlobalStyle`
   * {
+    box-sizing: border-box;
     position: relative;
     font-family: ${SansFont};
   }

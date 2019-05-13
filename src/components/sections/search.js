@@ -11,8 +11,11 @@ const SearchHeading = styled.h2`
   font-size: 72px;
   font-style: normal;
   font-weight: 700;
-  line-height: 64px;
   text-align: center;
+
+  @media(max-width:720px) {
+    font-size: 64px;
+  }
 `
 
 const SearchSection = props => (

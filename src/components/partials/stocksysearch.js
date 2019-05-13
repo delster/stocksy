@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
+const responsiveBreakpoint = `720px`
+
 const SearchForm = styled.form`
   display: flex;
-  flex-flow: row nowrap;
   justify-content: space-between;
   font-family: Open Sans;
   font-size: 24px;
@@ -14,6 +15,15 @@ const SearchForm = styled.form`
   width: 95%;
   max-width: 800px;
   margin: 0 auto;
+
+  @media (max-width: ${responsiveBreakpoint}) {
+    display: block;
+    width: 100%;
+    & * {
+      height: 60px;
+      margin-bottom: 1em;
+    }
+  }
 `
 const SearchInput = styled.input`
   color: #d4d4d4;
@@ -26,15 +36,36 @@ const SearchInput = styled.input`
   &::placeholder {
     color: #ccc;
   }
+
+  @media (max-width: ${responsiveBreakpoint}) {
+    display: block;
+    padding-right: 25px;
+    width: 100%;
+  }
 `
+
+const ButtonColorPrimary = `#ff3f58`
+const ButtonColorSecondary = `black`
 const SearchButton = styled.button`
-  flex: 1 0 220px;
-  color: #ff3f58;
-  background: rgba(0, 152, 219, 0);
+  flex: 1 1 220px;
+  color: ${ButtonColorPrimary};
+  background: ${ButtonColorSecondary};
   line-height: 29px;
   text-align: center;
   height: 100%;
-  border: 2px solid #ff3f58;
+  width: 220px;
+  border: 2px solid ${ButtonColorPrimary};
+  transition: .2s all ease-in-out;
+
+  &:hover, &:focus {
+    color: ${ButtonColorSecondary};
+    background: ${ButtonColorPrimary};
+  }
+
+  @media (max-width: ${responsiveBreakpoint}) {
+    display: block;
+    margin: 0 auto;
+  }
 `
 
 const StocksySearch = () => {
