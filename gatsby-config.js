@@ -11,6 +11,8 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     // CMS
     `gatsby-plugin-netlify-cms`,
+    // Markdown Parser
+    `gatsby-transformer-remark`,
     // Source Images from Filesystem
     {
       resolve: `gatsby-source-filesystem`,
@@ -30,8 +32,6 @@ module.exports = {
         path: `${__dirname}/landingpages`,
       },
     },
-    // Markdown Parser
-    `gatsby-transformer-remark`,
     // PWA Manifest
     {
       resolve: `gatsby-plugin-manifest`,
