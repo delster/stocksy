@@ -56,7 +56,7 @@ discover:
         https://www.stocksy.com/stock-photos?s=business+or+professional&t=professionals
       imageId: '574420'
   heading: Stock Business Photography
-  label: Discover Stocksy
+  label: DISCOVER STOCKSY
 blog:
   heading: On the Blog
   label: More Great Stuff
