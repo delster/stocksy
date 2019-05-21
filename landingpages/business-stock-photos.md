@@ -1,6 +1,6 @@
 ---
 title: Business Stock Photos
-slug: business-stock-photos
+slug: /business-stock-photos
 description: >-
   Download royalty-free business stock photos from Stocksy United today. Keep up
   on the latest office trends and skip the fake boardroom actors.
