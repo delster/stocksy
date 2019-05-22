@@ -35,6 +35,7 @@ const DiscoverGrid = styled.div`
     grid-template-columns: none;
   }
 `
+/* eslint-disable no-use-before-define */
 const DiscoverGridItem = styled.div`
   & ${CaptionedImage} img {
     max-height: 400px;
@@ -46,6 +47,7 @@ const DiscoverGridItem = styled.div`
     }
   }
 `
+/* eslint-enable no-use-before-define */
 const DiscoverHeading = styled.h2`
   color: white;
   font-size: 42px;
