@@ -33,25 +33,38 @@ exports.onCreateNode = async ({
   const discoverImages = node.frontmatter.discover.discoverImages
   const blogImages = node.frontmatter.blog.posts
 
-  const createCDNFileNode = async (name, url) => {
-    fileNode = await createRemoteFileNode({
-      url: url,
-      parentNodeId: node.id,
-      store,
-      cache,
-      createNode,
-      createNodeId,
-    })
-    fileField = await createNodeField({
-      node,
-      name: name,
-      value: fileNode.id,
+  const processCdnImages = (nodes, prefix) => {
+    nodes.map(async img => {
+      let fileNode
+      try {
+        fileNode = await createRemoteFileNode({
+          url: toCdnUri(img.imageId),
+          parentNodeId: node.id,
+          store,
+          cache,
+          createNode,
+          createNodeId,
+        })
+      } catch (e) {
+        /* Ignore */
+      }
+
+      if (fileNode) {
+        let nodeField
+        try {
+          nodeField = await createNodeField({
+            node,
+            name: `${prefix}Image_${nodes.indexOf(img)}___NODE`,
+            value: fileNode.id,
+          })
+        } catch (e) {}
+      }
     })
   }
 
-  for await (img of heroImages) createCDNFileNode(`heroImage_${heroImages.indexOf(img)}___NODE`, toCdnUri(img.imageId))
-  for await (img of discoverImages) createCDNFileNode(`discoverImage_${discoverImages.indexOf(img)}___NODE`, toCdnUri(img.imageId))
-  for await (img of blogImages) createCDNFileNode(`blogImage_${blogImages.indexOf(img)}___NODE`, toCdnUri(img.imageId))
+  await processCdnImages(heroImages, 'hero')
+  await processCdnImages(discoverImages, 'discover')
+  await processCdnImages(blogImages, 'blog')
 }
 
 // Create the Landing Pages
@@ -106,16 +119,6 @@ exports.createPages = async ({ actions, graphql }) => {
     }
   `).then(result => {
     if (result.errors) return Promise.reject(result.errors)
-
-    /*
-    fragment CDNImage on File {
-      childImageSharp {
-        fluid(maxWidth: 500) {
-          src
-        }
-      }
-    }
-*/
 
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       createPage({

@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-
 import CDNImage from '../utils/cdnimage'
 
 const gridGap = `20px`
