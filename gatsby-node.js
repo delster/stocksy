@@ -33,7 +33,7 @@ exports.onCreateNode = async ({
   const discoverImages = node.frontmatter.discover.discoverImages
   const blogImages = node.frontmatter.blog.posts
 
-  const processCdnImages = (nodes, prefix) => {
+  const processCdnImages = async (nodes, prefix) => {
     await nodes.map(async img => {
       let fileNode
       try {
