@@ -34,7 +34,7 @@ exports.onCreateNode = async ({
   const blogImages = node.frontmatter.blog.posts
 
   const processCdnImages = (nodes, prefix) => {
-    nodes.map(async img => {
+    await nodes.map(async img => {
       let fileNode
       try {
         fileNode = await createRemoteFileNode({
@@ -45,9 +45,7 @@ exports.onCreateNode = async ({
           createNode,
           createNodeId,
         })
-      } catch (e) {
-        /* Ignore */
-      }
+      } catch (e) {}
 
       if (fileNode) {
         let nodeField
