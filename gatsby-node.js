@@ -34,30 +34,29 @@ exports.onCreateNode = async ({
   const blogImages = node.frontmatter.blog.posts
 
   const processCdnImages = async (nodes, prefix) => {
-    await nodes.map(async img => {
-      let fileNode
-      try {
-        fileNode = await createRemoteFileNode({
-          url: toCdnUri(img.imageId),
-          parentNodeId: node.id,
-          store,
-          cache,
-          createNode,
-          createNodeId,
-        })
-      } catch (e) {}
-
-      if (fileNode) {
-        let nodeField
+    await Promise.all(
+      nodes.map(async img => {
+        let fileNode
         try {
-          nodeField = await createNodeField({
+          fileNode = await createRemoteFileNode({
+            url: toCdnUri(img.imageId),
+            parentNodeId: node.id,
+            store,
+            cache,
+            createNode,
+            createNodeId,
+          })
+        } catch (e) {}
+  
+        if (fileNode) {
+          createNodeField({
             node,
             name: `${prefix}Image_${nodes.indexOf(img)}___NODE`,
             value: fileNode.id,
           })
-        } catch (e) {}
-      }
-    })
+        }
+      })
+    )
   }
 
   await processCdnImages(heroImages, 'hero')
