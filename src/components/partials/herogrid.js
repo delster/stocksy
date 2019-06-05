@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import CDNImage from '../utils/cdnimage'
+
+import FluidImg from '../utils/fluidimage'
 
 const gridGap = `20px`
 const responsiveBreakpoint = `800px`
@@ -80,69 +81,46 @@ const Box = styled.div`
   }
 `
 
-const HeroGrid = props => (
-  <Grid outer>
-    <GridItem flex>
-      <Box area="a" flexBasis="50%" gapBottom>
-        <CDNImage
-          assetId={props.gridImages[0].imageId}
-          alt={props.gridImages[0].altText}
-        />
-      </Box>
-      <Box area="b" flexBasis="40%">
-        <CDNImage
-          assetId={props.gridImages[1].imageId}
-          alt={props.gridImages[1].altText}
-        />
-      </Box>
-    </GridItem>
-    <Grid inner>
-      <Box area="c">
-        <CDNImage
-          assetId={props.gridImages[2].imageId}
-          alt={props.gridImages[2].altText}
-        />
-      </Box>
-      <Box area="d">
-        <CDNImage
-          assetId={props.gridImages[3].imageId}
-          alt={props.gridImages[3].altText}
-        />
-      </Box>
-      <Box area="e">
-        <CDNImage
-          assetId={props.gridImages[4].imageId}
-          alt={props.gridImages[4].altText}
-        />
-      </Box>
-      <Box area="f">
-        <CDNImage
-          assetId={props.gridImages[5].imageId}
-          alt={props.gridImages[5].altText}
-        />
-      </Box>
-      <Box area="g">
-        <CDNImage
-          assetId={props.gridImages[6].imageId}
-          alt={props.gridImages[6].altText}
-        />
-      </Box>
+const HeroGrid = props => {
+  const { gridImages } = props
+
+  return (
+    <Grid outer>
+      <GridItem flex>
+        <Box area="a" flexBasis="50%" gapBottom>
+          <FluidImg fluid={gridImages[0].optimized.childImageSharp.fluid} alt={gridImages[0].altText} />
+        </Box>
+        <Box area="b" flexBasis="40%">
+          <FluidImg fluid={gridImages[1].optimized.childImageSharp.fluid} alt={gridImages[0].altText} />
+        </Box>
+      </GridItem>
+      <Grid inner>
+        <Box area="c">
+          <FluidImg fluid={gridImages[2].optimized.childImageSharp.fluid} alt={gridImages[0].altText} />
+        </Box>
+        <Box area="d">
+          <FluidImg fluid={gridImages[3].optimized.childImageSharp.fluid} alt={gridImages[0].altText} />
+        </Box>
+        <Box area="e">
+          <FluidImg fluid={gridImages[4].optimized.childImageSharp.fluid} alt={gridImages[0].altText} />
+        </Box>
+        <Box area="f">
+          <FluidImg fluid={gridImages[5].optimized.childImageSharp.fluid} alt={gridImages[0].altText} />
+        </Box>
+        <Box area="g">
+          <FluidImg fluid={gridImages[6].optimized.childImageSharp.fluid} alt={gridImages[0].altText} />
+        </Box>
+      </Grid>
+      <GridItem flex>
+        <Box area="h" flexBasis="55%" gapBottom>
+          <FluidImg fluid={gridImages[7].optimized.childImageSharp.fluid} alt={gridImages[0].altText} />
+        </Box>
+        <Box area="i" flexBasis="35%">
+          <FluidImg fluid={gridImages[8].optimized.childImageSharp.fluid} alt={gridImages[0].altText} />
+        </Box>
+      </GridItem>
     </Grid>
-    <GridItem flex>
-      <Box area="h" flexBasis="55%" gapBottom>
-        <CDNImage
-          assetId={props.gridImages[7].imageId}
-          alt={props.gridImages[7].altText}
-        />
-      </Box>
-      <Box area="i" flexBasis="35%">
-        <CDNImage
-          assetId={props.gridImages[8].imageId}
-          alt={props.gridImages[8].altText}
-        />
-      </Box>
-    </GridItem>
-  </Grid>
-)
+  )
+}
 
 export default HeroGrid

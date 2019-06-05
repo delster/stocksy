@@ -4,21 +4,15 @@ What is this? It's a microsite that will live in the client's AWS ecosystem and 
 
 ## Tech Stack
 
-TODO: Add links to each technology involved, and explain how it's used.
-
-In use now:
-
-* React
-* React Helmet (SEO)
+* Autoprefixer (Browser Compatibility)
 * Gatsby.js (SSG)
-* Prettier (Formatting)
+* gatsby-image (Image Optimization)
+* Netlify CMS? (CMS)
+* Prettier (Code Formatting)
+* React (PWA Functionality)
+* React Helmet (SEO)
 * styled-components (CSS-in-JS)
-
-Coming Soon (tm):
-
-* ESLint (Formatting)
-* Netlify CMS? (Non-technical Editing)
-* ...and more?
+* ...and more
 
 ## Deployed to Netlify
 
@@ -30,4 +24,4 @@ This site is deployed to [Netlify](http://netlify.com)'s CDN via their CI/CD pip
 
 ## How to Use
 
-This repo is being created directly for a client, and therefore will be opinionated and contain design/content choices that won't be appropriate for your use case. I recommend looking to it for inspiration, but this is **not** a starter and I can't recommend using it as such.
+This repo is being created directly for a client, and therefore will be opinionated and contain design/content choices that won't be appropriate for your use case. I recommend looking to it for inspiration, but this is **not** a starter and I can't recommend using it as such. The best use is to just visit their site and check it out!

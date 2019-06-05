@@ -34,6 +34,14 @@ const GlobalStyle = createGlobalStyle`
     position: relative;
     font-family: ${SansFont};
   }
+  /* START: gastsby-image fix */
+  picture {
+    position: initial;
+  }
+  .gatsby-image-wrapper {
+    height: 100%;
+  }
+  /* END: gastsby-image fix */
   h1,h2,h3,h4,h5,h6 {
     font-family: ${SerifFont};
   }

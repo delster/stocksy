@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+
 import Container from '../layout/container'
 import { SectionLabel } from '../partials/sectionlabel'
-import CDNImage from '../utils/cdnimage'
+import FluidImg from '../utils/fluidimage'
 
 const responsiveBreakpoint = `980px`
 
@@ -102,7 +103,7 @@ const BlogSection = props => (
             <BlogBox key={post.imageId}>
               <BlogPost>
                 <BlogImgWrap>
-                  <CDNImage assetId={post.imageId} />
+                  <FluidImg fluid={post.optimized.childImageSharp.fluid} />
                 </BlogImgWrap>
                 <BlogLink href={post.linkUrl}>{post.linkText} ></BlogLink>
               </BlogPost>

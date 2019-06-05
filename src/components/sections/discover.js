@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import Container from '../layout/container'
 import { SectionLabel } from '../partials/sectionlabel'
-import CDNImage from '../utils/cdnimage'
+import FluidImg from '../utils/fluidimage'
 
 const responsiveBreakpoint = `720px`
 
@@ -28,7 +28,7 @@ const DiscoverSectionLabel = styled(SectionLabel)`
 const DiscoverGrid = styled.div`
   display: grid;
   grid-gap: 30px;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 400px);
   grid-template-columns: repeat(2, 1fr);
 
   @media (max-width: ${responsiveBreakpoint}) {
@@ -38,12 +38,12 @@ const DiscoverGrid = styled.div`
 /* eslint-disable no-use-before-define */
 const DiscoverGridItem = styled.div`
   & ${CaptionedImage} img {
-    max-height: 400px;
+    max-height: 440px;
   }
   &:nth-of-type(4) {
     grid-row-end: span 2;
     & ${CaptionedImage} img {
-      max-height: 800px;
+      max-height: 880px;
     }
   }
 `
@@ -109,7 +109,7 @@ const DiscoverSection = props => (
             <DiscoverGridItem key={i}>
               <a href={e.captionLinkUrl}>
                 <CaptionedImage>
-                  <CDNImage assetId={e.imageId} alt={e.altText} />
+                  <FluidImg fluid={e.optimized.childImageSharp.fluid} alt={e.altText} />
                   <Caption>{e.captionLinkText}</Caption>
                 </CaptionedImage>
               </a>
