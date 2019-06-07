@@ -10,7 +10,7 @@ import SearchSection from '../components/sections/search'
 
 const Template = ({ data }) => {
   const { fields } = data.markdownRemark
-  const { title, description, hero, discover, blog, search } = data.markdownRemark.frontmatter
+  const { slug, title, description, hero, discover, blog, search } = data.markdownRemark.frontmatter
 
   // This could use a refactor at the Node API level to expose these as pre-built fields.
   const heroImages = hero.gridImages.map((e, i) => ({ ...e, "optimized": fields[`heroImage_${i}`] }) )
@@ -22,7 +22,7 @@ const Template = ({ data }) => {
       <SEO
         title={title}
         description={description}
-        keywords={[`stocksy`, `gatsby`, `microsite`]}
+        canonical={`https://www.stocksy.com/a${slug}`}
       />
       <HeroSection
         heading={hero.heading}
@@ -66,6 +66,7 @@ export const pageQuery = graphql`
         blogImage_1 { ...optimizedImg }
       }
       frontmatter {
+        slug
         title
         description
         hero {

@@ -42,7 +42,7 @@ module.exports = {
         background_color: `#000000`,
         theme_color: `#FF3F58`, // Websafe Version would be #FF3366
         display: `minimal-ui`,
-        icon: `src/images/logo.png`,
+        icon: `src/images/favicon.png`,
       },
     },
     // PWA & Offline Functionality
