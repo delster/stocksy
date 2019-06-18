@@ -29,7 +29,7 @@ hero:
       imageId: '2089985'
     - altText: Alt Text Here
       imageId: '1921360'
-  heading: '24,567+ Dog Stock Photos, Curated Daily'
+  heading: '24,566+ Dog Stock Photos, Curated Daily'
 discover:
   copy: >-
     Explore our curated galleries featuring the latest stock dog photography.
