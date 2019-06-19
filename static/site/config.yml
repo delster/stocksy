@@ -1,0 +1,9 @@
+navlinks-primary:
+  - navLinkText: Blog
+    navLinkUrl: 'https://www.stocksy.com/blog'
+  - navLinkText: Support
+    navLinkUrl: 'https://www.stocksy.com/service/support'
+  - navLinkText: Login
+    navLinkUrl: 'https://www.stocksy.com/user/login'
+  - navLinkText: Sign Up
+    navLinkUrl: 'https://www.stocksy.com/user/signup'
