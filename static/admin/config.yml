@@ -6,6 +6,14 @@ media_folder: static/images
 public_folder: /images
 
 collections:
+  - label: "Sitewide"
+    name: "sitewide"
+    files:
+      - label: "Settings"
+        name: "sitesettings"
+        file: "static/site/config.yml"
+        fields:
+          - {label: 'Primary Nav Links', name: 'navlinks-primary', widget: 'list'}
   - name: lp
     identifier_field: slug
     label: 'Landing Pages'
