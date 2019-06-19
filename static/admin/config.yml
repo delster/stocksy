@@ -13,7 +13,12 @@ collections:
         name: "sitesettings"
         file: "static/site/config.yml"
         fields:
-          - {label: 'Primary Nav Links', name: 'navlinks-primary', widget: 'list'}
+          - label: 'Primary Nav Links'
+            name: 'navlinks-primary'
+            widget: 'list'
+            fields:
+              - { label: 'Link Text', name: 'navLinkText' }
+              - { label: 'Link URL', name: 'navLinkUrl' }
   - name: lp
     identifier_field: slug
     label: 'Landing Pages'
