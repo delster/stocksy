@@ -1,6 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  FaFacebookSquare,
+  FaInstagram,
+  FaPinterestP,
+  FaTwitter,
+} from 'react-icons/fa'
 
 import Container from '../layout/container'
 
@@ -48,10 +53,10 @@ const Footer = () => (
   <StyledFooter>
     <Container>
       <FooterSocials>
-        <FontAwesomeIcon icon={['fab', 'facebook-square']} />
-        <FontAwesomeIcon icon={['fab', 'instagram']} />
-        <FontAwesomeIcon icon={['fab', 'pinterest-p']} />
-        <FontAwesomeIcon icon={['fab', 'twitter']} />
+        <FaFacebookSquare />
+        <FaInstagram />
+        <FaPinterestP />
+        <FaTwitter />
       </FooterSocials>
       <FooterColophon>
         The entire Stocksy United collection is 100% exclusive, hand selected

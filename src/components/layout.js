@@ -9,16 +9,6 @@ import 'normalize.css'
 import 'typeface-open-sans'
 import 'typeface-playfair-display'
 
-// FontAwesome Library to load only these specific icons:
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fab } from '@fortawesome/free-brands-svg-icons'
-import {
-  faFacebookSquare,
-  faInstagram,
-  faPinterestP,
-  faTwitter,
-} from '@fortawesome/free-brands-svg-icons'
-
 // Layout Components
 import Header from './partials/stickyheader'
 import Footer from './partials/footer'
@@ -58,8 +48,6 @@ const PageWrapper = styled.div`
 const Main = styled.main`
   flex: 1 1 100%;
 `
-
-library.add(fab, faFacebookSquare, faInstagram, faPinterestP, faTwitter)
 
 const Layout = ({ children }) => (
   <PageWrapper>
