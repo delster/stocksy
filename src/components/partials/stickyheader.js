@@ -1,45 +1,77 @@
 import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
-import Container from '../layout/container'
-import LogoImg from '../../images/logo.png'
 
-const StyledHeader = styled.header`
-  margin-top: 3rem;
-`
-const HeaderWrapper = styled(Container)`
+import LogoImg from '../../images/logo-header.svg'
+import HeaderSearch from './headersearch'
+
+const StickyHeader = styled.header`
+  background-color: #181818;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  & > div {
-    display: inline-block;
-  }
+  position: fixed;
+  width: 100%;
+  z-index: 500;
 `
-const HeaderLeft = styled.div``
-const HeaderRight = styled.div`
-  &,& a {
-    color: #a6a6a6;
-    font-family: "Open Sans";
-    font-size: 14px;
-    font-weight: 400;
-  }
+const HeaderLeft = styled.div`
+  display: flex;
+  align-items: center;
+`
+const LogoWrap = styled.div`
+  padding-left: 0.666em;
+  padding-top: 0.3em;
+`
+const HeaderRight = styled.nav`
   & a {
+    display: inline-block;
+    color: #e6e6e6;
+    font-family: 'Open Sans';
+    font-size: 13px;
+    font-weight: 400;
     text-decoration: none;
-    padding-bottom: 2px;
-    border-bottom: 1px solid #a6a6a6;
+    padding: 1.8em 1.15em;
   }
 `
 
-const Header = () => (
-  <StyledHeader>
-    <HeaderWrapper>
-      <HeaderLeft>
-        <img src={LogoImg} alt="Stocksy Logo" />
-      </HeaderLeft>
-      <HeaderRight>
-        Shop <a href="https://stocksy.com">Stocksy.com</a>
-      </HeaderRight>
-    </HeaderWrapper>
-  </StyledHeader>
-)
+export default () => (
+  <StaticQuery
+    query={graphql`
+      {
+        allCmsSettings {
+          edges {
+            node {
+              navlinks_primary {
+                navLinkText
+                navLinkUrl
+              }
+            }
+          }
+        }
+      }
+    `}
+    render={data => {
+      const navLinks = data.allCmsSettings.edges[0].node.navlinks_primary
 
-export default Header
+      return (
+        <StickyHeader>
+          <HeaderLeft>
+            <LogoWrap>
+              <a href="https://www.stocksy.com/">
+                <img src={LogoImg} alt="Stocksy Logo" />
+              </a>
+            </LogoWrap>
+            <HeaderSearch />
+          </HeaderLeft>
+          <HeaderRight>
+            {navLinks.map(n => (
+              <a key={n.navLinkText} href={n.navLinkUrl}>
+                {n.navLinkText}
+              </a>
+            ))}
+          </HeaderRight>
+        </StickyHeader>
+      )
+    }}
+  />
+)

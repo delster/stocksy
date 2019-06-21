@@ -20,7 +20,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 
 // Layout Components
-import Header from './partials/header'
+import Header from './partials/stickyheader'
 import Footer from './partials/footer'
 
 // Styling Variables

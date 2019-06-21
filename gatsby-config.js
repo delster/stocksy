@@ -32,6 +32,20 @@ module.exports = {
         path: `${__dirname}/landingpages`,
       },
     },
+    // Site Config via Netlify CMS
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `cmsSettings`,
+        path: `${__dirname}/static/site`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-yaml`,
+      options: {
+        typeName: `CmsSettings`,
+      },
+    },
     // PWA Manifest
     {
       resolve: `gatsby-plugin-manifest`,
